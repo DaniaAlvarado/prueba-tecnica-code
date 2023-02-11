@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home{
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    &__column{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        & :hover{
+            color: rgb(243, 202, 128);
+        }
+    }
+    .header{
+        width: 80%;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        &__title{
+            font-size: 25px;
+        }
+        &__search{
+            width: 70%;
+            height: 20px;
+        }
+    }
+    &__img{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        height: 80%;
+        gap: 20px;
+        padding: 15px;
+        .image{
+            width: 60px;
+            height: 30px;
+        }
+        .name{
+            width: 200px;
+            height: 30px;
+            background-color: rgb(225, 223, 223);
+        }
+    }
+}
