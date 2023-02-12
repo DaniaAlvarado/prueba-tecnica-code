@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { getMovies } from '../services/helpers';
+import { getMovies, URL_IMG } from '../services/helpers';
 import "./Home.scss";
 
 const Home = () => {
@@ -12,10 +12,10 @@ const Home = () => {
     const navigate = useNavigate();
 
     const fetchMovies = async () => {
-        const product = await getMovies();
-        console.log(product);
-        setMovies(product)
-        setlist(product);
+        const movie = await getMovies();
+        console.log(movie);
+        setMovies(movie)
+        setlist(movie);
     };
 
     useEffect(() => {
@@ -28,10 +28,10 @@ const Home = () => {
     }
 
     const filter = (word) => {
-        const result = list.filter((item) =>{
+        const result = list.filter((item) => {
             if (item.title.toString().toLowerCase().includes(word.toLowerCase())
-            ||item.original_language.toString().toLowerCase().includes(word.toLowerCase()) ){
-                return(item)
+                || item.original_language.toString().toLowerCase().includes(word.toLowerCase())) {
+                return (item)
             }
         });
         setMovies(result)
@@ -44,23 +44,23 @@ const Home = () => {
                     <nav>Home</nav>
                     <nav>Films</nav>
                 </section>
-                <div className='home__img'>
-                    <header className='header'>
-                        <h1 className='header__title'>Films</h1>
-                        <input onChange={onSearch} value={search} type="text" placeholder='search' className='header__search' />
+                <div className='home__list'>
+                    <header>
+                        <h1>Films</h1>
+                        <input onChange={onSearch} value={search} type="text" placeholder='search' />
                     </header>
-                    {movies && movies.length ? (
-                        movies.map((movies, index) => (
-                            <aside key={index}>
-                                {/* <figure className='image'>
-                                <img src={movies.poster_path} alt="" />
-                            </figure> */}
-                                <div className='name' onClick={() => { navigate(`/details/${movies.id}`) }}>{movies.original_title}</div>
-                            </aside>
-                        ))
-                    ) : (
-                        <></>
-                    )}
+                    <h2>New Releases</h2>
+                    <aside>
+                        {movies && movies.length ? (
+                            movies.map((movies, index) => (
+                                <figure key={index} onClick={() => { navigate(`/details/${movies.id}`) }}>
+                                    <img src={URL_IMG + movies.poster_path} alt={movies.id} />
+                                </figure>
+                            ))
+                        ) : (
+                            <></>
+                        )}
+                    </aside>
                 </div>
             </div>
         </>

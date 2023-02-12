@@ -1,53 +1,60 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.home{
+.home {
     width: 100vw;
-    height: 100vh;
     padding: 10px;
     display: flex;
-    &__column{
+
+    &__column {
         width: 20%;
         height: 100%;
+        background-color: rgb(230, 228, 228);
         display: flex;
         flex-direction: column;
         gap: 20px;
         padding: 15px;
-        & :hover{
+
+        & :hover {
             color: rgb(243, 202, 128);
         }
     }
-    .header{
-        width: 80%;
-        height: 20%;
+
+    &__list {
         display: flex;
-        justify-content: space-between;
-        &__title{
-            font-size: 25px;
-        }
-        &__search{
-            width: 70%;
-            height: 20px;
-        }
-    }
-    &__img{
-        display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         width: 80%;
-        height: 80%;
         gap: 20px;
-        padding: 15px;
-        .image{
-            width: 60px;
-            height: 30px;
+        padding: 10px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            h1 {
+                font-size: 30px;
+            }
+
+            input {
+                width: 70%;
+            }
         }
-        .name{
-            width: 200px;
-            height: 30px;
-            background-color: rgb(225, 223, 223);
+
+        aside {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px;
+            figure {
+                width: 150px;
+                height: 220px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
     }
 }
