@@ -1,11 +1,19 @@
 import axios from "axios";
 
-const API_URL='https://prueba-tecnica-production-f225.up.railway.app';
-export const URL_IMG = 'https://image.tmdb.org/t/p/w500/'
+const API_URL_MARVEL= 'https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=6b90a8fab91183c42ba2f73c6460ecf8&hash=c9a537de43aa9a17ed095b86fdeb4025'
+
+// https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=6b90a8fab91183c42ba2f73c6460ecf8&hash=c9a537de43aa9a17ed095b86fdeb4025
+
+//private: 09876db92b3dc5f42d5df3ed0de80bfff4b38926
+//public: 6b90a8fab91183c42ba2f73c6460ecf8
+
+// 109876db92b3dc5f42d5df3ed0de80bfff4b389266b90a8fab91183c42ba2f73c6460ecf8
+
+//c9a537de43aa9a17ed095b86fdeb4025
 
 export const getMovies = async () => {
     try {
-      const url_movies = `${API_URL}/results`;
+      const url_movies = `${API_URL_MARVEL}`;
   
       const { data } = await axios.get(url_movies);
   
@@ -18,16 +26,4 @@ export const getMovies = async () => {
     }
   }
 
-  export const getSingleMovies = async (id) => {
-    const url = `${API_URL}/results?id=${id}`;
-    try {
-      const { data } = await axios.get(url);
-      return data;
-    } catch (error) {
-      return {
-        error,
-        data: null,
-      };
-    }
-  };
 

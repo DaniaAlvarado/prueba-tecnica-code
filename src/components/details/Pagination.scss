@@ -1,0 +1,31 @@
+.buttons{
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    margin: 0 auto;
+    color: #C89B3C;
+    padding: 20px 0 20px 0;
+    button{
+        background-color: #C89B3C;
+        width: 34px;
+        height: 34px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width:800px){
+    .details{
+        &__section{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__img{
+            width: 70%;
+            height: 80%;
+        }
+        &__title{
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

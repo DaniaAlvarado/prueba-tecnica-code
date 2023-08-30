@@ -6,54 +6,78 @@
 
 .home {
     width: 100vw;
-    padding: 10px;
     display: flex;
+    flex-direction: column;
+    color: #F0E6D2;
+    background-color: rgb(20, 19, 19);
+    font-family: 'Beaufort for LOL';
+    font-style: normal;
+    font-weight: 500;
 
     &__column {
-        width: 20%;
-        height: 100%;
-        background-color: rgb(230, 228, 228);
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 15px;
+        width: 100%;
+        height: 20%;
+        margin-left: 50px;
+        gap: 60px;
+        align-items: center;
 
-        & :hover {
-            color: rgb(243, 202, 128);
+        img {
+            width: 25%;
+            height: 100%;
         }
+
+        & nav:hover {
+            color: #C89B3C;
+            width: 114px;
+            height: 116px;
+            text-align: center;
+            background: linear-gradient(180deg, #231F20 0%, rgba(34, 34, 34, 0) 100%);
+        }
+    }
+
+    &__movies {
+        display: flex;
+        width: 100%;
+        height: 193px;
+        margin: 0 50px 0 50px;
     }
 
     &__list {
         display: flex;
-        flex-direction: column;
-        width: 80%;
-        gap: 20px;
-        padding: 10px;
-        header {
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 0 50px 0 50px;
+        gap: 30px;
+
+        div {
+            width: 248px;
+            height: 448px;
+            background-color: gray;
             display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            h1 {
-                font-size: 30px;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 130.5%;
+            gap: 10px;
+            background: linear-gradient(360deg, #000000 0%, #090C14 0.01%, rgba(23, 26, 32, 0) 36.49%, rgba(39, 44, 52, 0) 114.84%);
+            /* Gris 3 */
+
+            border: 0.75px solid #3C3C41;
+            border-radius: 5px;
+
+            .info {
+                width: 178px;
+                height: 49px;
+                border: 1px solid #5B5A56;
+                border-radius: 5px;
             }
 
-            input {
-                width: 70%;
-            }
-        }
-
-        aside {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 10px;
-            figure {
-                width: 150px;
-                height: 220px;
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
+            img {
+                width: 122px;
+                height: 122px;
+                border-radius: 60px;
             }
         }
     }
